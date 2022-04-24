@@ -145,9 +145,6 @@ A Neo4J database can be hosted locally or on the cloud using the AuraDB service 
 * Less efficient at simple tasks over simple structured data because the data structure of an object needs to be inspected to view its structure vs a traditional relational database where the structure of a table is known before an operation.
 * The benefits gained in interpreting data are lost if a Graph Network Database is used to simply store data.
 
-
-> ----
->
 > #### Graph Databases
 >
 > <img align="right" src="./img/graph.svg">
@@ -164,8 +161,7 @@ A Neo4J database can be hosted locally or on the cloud using the AuraDB service 
 >
 > Properties are optionally used to describe both nodes (objects) and edges (relationships). They are stored as a key: value pair.
 > A `Person` node may contain properties such as `name`, `date_of_birth` or `gender`, a `Movie` node may contain properties such as `title` or `release_date`, a `REVIEWED` edge may contain properties for `rating` or `reviewed date`.
-> >
-> ----
+
 
 ----
 
@@ -179,8 +175,6 @@ The values and principles defined by the "Manifesto for Agile Software Developme
 
 #### Agile Software Development Values
 
->----
->
 >We are uncovering better ways of developing software by doing it and helping others do it.
 >
 > Through this work we have come to value:
@@ -191,14 +185,12 @@ The values and principles defined by the "Manifesto for Agile Software Developme
 > * **Responding to change** _over_ following a plan
 >
 > "That is to say, while both sides have value and the items on the right should be considered, the authors of the manifesto chose to tip the balance in favor of the items on the left."
->
-> ----
+
 
 
 #### Agile Software Development Principles
 
->----
->
+
 > The Manifesto for Agile Software Development is based on twelve principles
 > 
 > 1. Customer satisfaction by early and continuous delivery of valuable software.
@@ -213,8 +205,7 @@ The values and principles defined by the "Manifesto for Agile Software Developme
 > 10. Simplicity (the art of maximizing the amount of work not done) is essential
 > 11. Best architectures, requirements, and designs emerge from self-organizing teams
 > 12. Regularly, the team reflects on how to become more effective, and adjusts accordingly
->
-> ----
+
 
 ### Implementation of Agile Values and Principles
 
@@ -241,3 +232,6 @@ This isn't to say that an adept project manager would not be able to handle this
 By working in an iterative process that ends with a working piece of software at the end of each cycle a team can maintain customer satisfaction by enabling them to see the development and growth of the software. It also enables the customer to provide feedback which can be fed backing into the planning cycle to prioritise work or change requirements.
 
 ## Q4 Provide an overview and description of a standard source control workflow
+
+There is no one 'standard' source or version control workflow because different workflows may be more appropriate for different sized projects or different software being used to manage the workflow. It's not a one size fits all situation. 
+The most widely used source control software today is 'Git'
