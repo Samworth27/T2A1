@@ -2,5 +2,9 @@
     "svg.preview.background": "transparent",
     "cSpell.words": [
         "lockdowns"
+    ],
+    "cSpell.language": "en-GB",
+    "cSpell.enableFiletypes": [
+        "erb"
     ]
 }

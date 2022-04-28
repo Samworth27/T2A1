@@ -175,23 +175,23 @@ The values and principles defined by the "Manifesto for Agile Software Developme
 
 #### Agile Software Development Values
 
->We are uncovering better ways of developing software by doing it and helping others do it.
->
-> Through this work we have come to value:
->
+We are uncovering better ways of developing software by doing it and helping others do it.
+
+Through this work we have come to value:
+
 > * **Individual and interactions** _over_ processes and tools
 > * **Working software** _over_ comprehensive documentation
 > * **Customer collaboration** _over_ contract negotiation
 > * **Responding to change** _over_ following a plan
->
-> "That is to say, while both sides have value and the items on the right should be considered, the authors of the manifesto chose to tip the balance in favor of the items on the left."
+
+"That is to say, while both sides have value and the items on the right should be considered, the authors of the manifesto chose to tip the balance in favor of the items on the left."
 
 
 
 #### Agile Software Development Principles
 
+The Manifesto for Agile Software Development is based on twelve principles
 
-> The Manifesto for Agile Software Development is based on twelve principles
 > 
 > 1. Customer satisfaction by early and continuous delivery of valuable software.
 > 2. Welcome changing requirements, even in late development.
@@ -233,5 +233,131 @@ By working in an iterative process that ends with a working piece of software at
 
 ## Q4 Provide an overview and description of a standard source control workflow
 
-There is no one 'standard' source or version control workflow because different workflows may be more appropriate for different sized projects or different software being used to manage the workflow. It's not a one size fits all situation. 
-The most widely used source control software today is 'Git'
+One of the most widely used source control systems today is Git, which is a Distributed Revision Control System (DRCS). A DRCS allows multiple users to maintain a full working copy of the repository locally to work on and any changes can be disseminated to their peers to use in their own local repository.
+There is no one 'standard' source or version control workflow because different workflows may be more appropriate for different sized projects or different software being used to manage the workflow. It's not a one size fits all situation. However, because there are only so many 'commands' or actions available there is a lot of common ground between major workflow models and a few best practices from years of experience.
+
+### The Main Branch
+
+Nearly all source control workflows utilise a main branch as part of their model however different models disagree as to whether or not work should be directly committed to it.
+
+### Development Branch
+
+Some workflows use a development branch, a branch which is used for the development of new features. When the code is ready to be deployed it will either be merged back into the master branch or into a release branch.
+
+### Feature Branches
+
+Most model recommend the use of a feature branch. This is a branch from the main or development branch of code used to work on new features. Once the feature is complete it is merged back into the originating branch. Feature branches should be short lived in order to make the merging back into their originating branches as simple as possible.
+
+### Release Branch
+
+Some workflows use a release branch to separate a version of software for production. In some cases however the main branch is used for deployment and tagged with a version.
+
+### Commits & pushes
+
+All workflows involve the use of a local repository. Changes are made to this local repository. When enough changes have been made, files are committed together in logical groupings with informative messages about the changes made. In order for the changes to be shared they need to be 'pushed' to the master branch. 
+
+### Examples
+|Flow Variants|Trunk Based Development|
+---------|----------|
+|The original 'Gitflow' (has fallen out of favour in recent years due to complexity)|TBD for small teams. (incomplete features are disabled for release through 'feature flags')|
+ ![gitflow](./img/git-flow.svg)|![tbd](./img/tbd-for-small-teams.svg)|
+ |'Github Flow'. Used by Github for a continuos development environment|Scaled TBD (Useful for managing code review in larger teams)|
+![github flow](./img/github-flow.svg)| ![scaled tbd](./img/scaled-tbd.svg)|
+
+## Q5 - 
+
+## Q12 Ebay Study
+
+### a. List and describe the software used by the app.**
+
+Ebay currently use a wide variety of in house open source software for almost all of their operations. Their account on github.com has over 160 repositories.
+The website itself runs on JavaScript (MarkoJS), CSS and HTML.
+Oracle, MongoDB and its in house NuGraph built on the open source JanusGraph are used as DBMS.
+
+### b. Describe the hardware used to host the app.
+
+Ebay uses in house designed servers to distribute 500PT of storage and process 300 billion queries every day.
+Each pf Ebay's search servers are comprised of 2 Intel 6138 processors, each with 64GB of RAM.  Each server has multiple 2TB hardrives in RAID 10 and is capable of storing the database index.
+Each server is connected to Ebay's network infrastructure via 2 x 10GBps network ports.
+Each server fits into a 1U space in a standard 19" rack.
+It is not specified how many server nodes Ebay uses however their system is designed to be able to add or remove server nodes as need to the number is probably always growing however given a standard 19" rack has 48U of space and Ebay is likely to have multiple of these in each server cluster and server clusters distributed all over the US and globe it is possible to imagine just how many of these server nodes there are.
+This is just the storage server, in addition Ebay would require web servers and data servers for their operations.
+
+### c. Describe the interaction of technologies within the app
+
+Ebay uses a fairly standard front end stack of HTML, CSS and JavaScript in the form of MarkoJS, behind the scenes ebay utilises a a number of different technologies for their operations. They use a combination of traditional Relational Databases, Graph Network Databases and image databases. These are combined with powerful Machine Learning algorithms to provide users recommendations, enable fraud control and the ability to search for listings based on an image from their device.
+
+### d. Describe the way data is structured within the app
+
+Ebay uses multiple data structures depending on what the data is used for.
+
+#### Relational Databases
+
+Used to store hashed indexes to enable faster lookups in the Graph Network
+Used to store customer/ seller coupons
+
+#### Graph Network Databases
+
+Used to store the bulk of information regarding customers, listings and sales.
+Enables Machine Learning algorithms to group records more easily.
+
+#### Document Databases
+
+Ebay uses dedicated databases to store images
+
+### e. Identify entities which must be tracked by the app
+
+|||||
+|-|-|-|-|
+|Account|Item|Images|Category|
+|Address|Price|Bids|Review|Transaction|
+|Listings|||
+
+### f. Identify the relationships and associations between the entities you have identified in part (e)
+
+#### Accounts
+
+Can have listings
+Can have addresses (delivery address or item location)
+Can a list of transactions (buy or sell)
+Can have reviews (buyer or seller)
+
+#### Listings
+
+Must have a seller
+Must be a type of item
+Must have images
+Can have a buy price
+Can have bids
+Can be reviewed
+
+#### Items
+
+Must belong to at least one category
+
+#### Categories
+
+Can have parent or children categories
+Can have items associated
+
+#### Transaction
+
+Must have a listing
+Must have a  buyer
+Must have a price
+Must have a delivery address
+
+#### Bids
+
+Must belong to a listing
+Must belong to a buyer
+Must have a price
+
+#### Review
+
+Can be about a buyer, seller, or listing
+Can be from a buyer or seller
+
+### g. Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)
+
+![erd](img/erd.svg)
