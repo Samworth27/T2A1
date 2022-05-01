@@ -1,7 +1,8 @@
 <!-- Styling required for conversion to PDF format when using no margins in print options, ensure print background option is enabled -->
+
 <div style="padding: 2em">
 
-T2A1 - Workbook
+# T2A1 - Workbook
 
 Sam Mitchell
 
@@ -166,10 +167,7 @@ A Neo4J database can be hosted locally or on the cloud using the AuraDB service 
 * Not automatically supported by Ruby on Rails (however there are gems available to extend Neo4j to Rails)
 * The benefits gained in interpreting data are lost if a Graph Network Database is used to simply store data.
 
-
-
 <div style="page-break-after: always;"></div>
-
 
 #### Graph Databases
 
@@ -389,7 +387,6 @@ Verify that all tests are completed, document the testing results and prepare th
 The human factor must not ignored when looking at cyber security. In addition to the vetting of staff when allowing access to data, those with access must be aware of cyber security risks such as phishing/ spear-phishing attacks, physical attacks using malicious hardware (see [USB](https://www.tripwire.com/state-of-security/security-data-protection/malicious-usb-drives-are-being-posted-to-businesses/) [attacks](https://en.wikipedia.org/wiki/Stuxnet#Windows_infection))
 Clearly defined processes and regular training are important and useful tools in managing the human factor of cyber security.
 
-
 ### Processes
 
 Procedural controls for managing cyber security must be robust and comprehensive. Things that fall into this area include:
@@ -468,7 +465,7 @@ For a marketplace application, quick reactions from the application are paramoun
 
 The Privacy Act 1998 contains legislation for the handling of user data in Australia.
 
-[The Privacy Act 1998, Part II, Div 1, Section 6C](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712337) describes the definition of an 'Organisation' that this act applies to. 
+[The Privacy Act 1998, Part II, Div 1, Section 6C](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712337) describes the definition of an 'Organisation' that this act applies to.
 Subsection (1) excludes small business owners from this definition.
 
 [The Privacy Act 1998, Part II, Div 1, Section 6D](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712338) describes the definition of a small business.
@@ -555,7 +552,7 @@ Relationships between objects are represented with the inclusion of a foreign ke
 
 ---
 
-## Q10 - Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.
+## Q10 - Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database
 
 ### Constraints
 
@@ -567,7 +564,7 @@ To ensure data integrity all transactions in a relational database must be ACID 
 
 #### Atomicity
 
-A transaction may be comprised of multiple statements, Atomicity guarantees that all statements in a transaction must pass for any of them to be applied. One example is the transfer of money from one bank account to another. A bank will not deposit money into account 'B' if it cannot be withdrawn from account 'A' and vice versa. In this case the transaction being the transfer is Atomic. 
+A transaction may be comprised of multiple statements, Atomicity guarantees that all statements in a transaction must pass for any of them to be applied. One example is the transfer of money from one bank account to another. A bank will not deposit money into account 'B' if it cannot be withdrawn from account 'A' and vice versa. In this case the transaction being the transfer is Atomic.
 
 #### Consistency (Correctness)
 
@@ -614,15 +611,15 @@ Relational algebra draws some of its operators from set theory (union, intersect
 
 # Marketplace Case Study - Ebay
 
-## Q12 - Conduct research into a marketplace website (app) and answer the following parts:
+## Q12 - Conduct research into a marketplace website (app) and answer the following parts
 
-### a. List and describe the software used by the app.
+### a. List and describe the software used by the app
 
 Ebay currently use a wide variety of in house open source software for almost all of their operations. Their account on github.com has over 160 repositories.
 The website itself runs on JavaScript (MarkoJS), CSS and HTML.
 Oracle, MongoDB and its in house NuGraph built on the open source JanusGraph are used as DBMS.
 
-### b. Describe the hardware used to host the app.
+### b. Describe the hardware used to host the app
 
 Ebay uses in house designed servers to distribute 500PT of storage and process 300 billion queries every day.
 Each pf Ebay's search servers are comprised of 2 Intel 6138 processors, each with 64GB of RAM. Each server has multiple 2TB hardrives in RAID 10 and is capable of storing the database index.
