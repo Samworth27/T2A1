@@ -44,20 +44,12 @@ Sam Mitchell
     * [People](#people)
     * [Processes](#processes)
     * [Technology](#technology)
+    * [ISO/IEC 27000 Series](#isoiec-27000-series)
   * [Q7 - Discuss common methods of protecting information and data and how you would apply them to the project](#q7---discuss-common-methods-of-protecting-information-and-data-and-how-you-would-apply-them-to-the-project)
   * [Q8 - Research what your legal obligations are in relation to handling user data and how they can be met for the project](#q8---research-what-your-legal-obligations-are-in-relation-to-handling-user-data-and-how-they-can-be-met-for-the-project)
-    * [Australian Laws](#australian-laws)
-    * [Standards](#standards)
-    * [Compliance](#compliance)
 * [Relational Databases](#relational-databases)
-  * [Q9 - Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure](#q9---describe-the-structural-aspects-of-the-relational-database-model-your-description-should-include-information-about-the-structure-in-which-data-is-stored-and-how-relations-are-represented-in-that-structure)
-    * [Tables](#tables)
-    * [Columns](#columns)
-    * [Rows](#rows)
-    * [Relationships](#relationships)
+  * [Q9 - Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure.](#q9---describe-the-structural-aspects-of-the-relational-database-model-your-description-should-include-information-about-the-structure-in-which-data-is-stored-and-how-relations-are-represented-in-that-structure)
   * [Q10 - Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.](#q10---describe-the-integrity-aspects-of-the-relational-database-model-your-description-should-include-information-about-the-types-of-data-integrity-and-how-they-can-be-enforced-in-a-relational-database)
-    * [Constraints](#constraints)
-    * [ACID](#acid)
   * [Q11 - Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database.](#q11---describe-the-manipulative-aspects-of-the-relational-database-model-your-description-should-include-information-about-the-ways-in-which-data-is-manipulated-added-removed-changed-and-retrieved-in-a-relational-database)
 * [Marketplace Case Study - Ebay](#marketplace-case-study---ebay)
   * [Q12 - Conduct research into a marketplace website (app) and answer the following parts:](#q12---conduct-research-into-a-marketplace-website-app-and-answer-the-following-parts)
@@ -396,17 +388,8 @@ Verify that all tests are completed, document the testing results and prepare th
 
 ### People
 
-The human factor must not ignored when looking at cyber security. In addition to the vetting of staff when allowing access to data, those with access must be aware of cyber security risks such as phishing/ spear-phishing attacks, physical attacks using malicious hardware (see [USB](https://www.tripwire.com/state-of-security/security-data-protection/malicious-usb-drives-are-being-posted-to-businesses/) [attacks](https://en.wikipedia.org/wiki/Stuxnet#Windows_infection))
-Clearly defined processes and regular training are important and useful tools in managing the human factor of cyber security.
-
-
+The human factor must not ignored when looking at cyber security. In addition to the vetting of staff when allowing access to data, those with access must be aware of cyber security risks such as phishing/ spear-phishing attacks, physical attacks using malicious hardware [see](https://www.tripwire.com/state-of-security/security-data-protection/malicious-usb-drives-are-being-posted-to-businesses/) USB attacks)
 ### Processes
-
-Procedural controls for managing cyber security must be robust and comprehensive. Things that fall into this area include:
-How do you manage a remote worker connecting from an external network?
-Do you allow workers to connect their own USB devices to the network?
-What individuals and what roles can access specific data?
-What are the procedures in the instance of a data breach?
 
 ### Technology
 
@@ -418,22 +401,38 @@ When it comes to information system security there are three things that need be
 
 Only those who are authorised have access to specific assets and those who are not authorised are actively denied access to those assets.
 
-For this project this means protecting sensitive personal information of users. Primarily this can be done by restricting access to this information however this information can also be encrypted for extra protection.
-Financial information can be protected by using trusted third party systems to process payments, eg paypal.
-
 * ##### Integrity
 
 Ensuring data is correct and authentic. Verifying it has not been modified.
 (This is different from data integrity in a DBMS)
 
-In regards to a marketplace application the primary concern here is the interception of information while a transaction is being executed that may allow the modification of transaction price, allowing a buyer to make a purchase for less then the actual amount, or receiving an item of greater value instead of the purchased item.
-This type of activity can be stopped by using authentication tokens in forms and minimising the amount of information transferred in POST methods. All information coming from the client should be cross-checked against server side records.
-
 * ##### Accessibility
 
-Networks, systems, and applications must be running and able to be connected to to allow authorised users to have timely and reliable access to resources when they are needed.
+networks, systems, and applications are up and running. It ensures that authorized users have timely, reliable access to resources when they are needed.
 
-For a marketplace application, quick reactions from the application are paramount in enhancing the user experience. This means data that is not of a sensitive nature should be stored in a manner that is easy and quick for the server to send the client for display. Only what is necessary to be protected should be locked away behind slower decryption processes.
+###
+
+### ISO/IEC 27000 Series
+The ISO/IEC 27000 Series of standards describe best practices of the management of Information System Security.
+In particular the ISO 27001, Annex A describes 114 controls grouped into 14 categories:
+
+1. Information Security Policies
+2. Organisation of Information Security  
+3. Human Resources Security  
+4. Asset Management  
+5. Access Control  
+6. Cryptography  
+7. Physical and Environmental Security  
+8. Operational Security  
+9. Communications Security  
+10. System Acquisition, Development and Maintenance  
+11. Supplier Relationships
+12. Information Security Incident Management
+13. Information Security Aspects of Business Continuity Management
+14. Compliance
+
+This document only briefly describes the 114 controls however ISO 270002 goes into further details on these controls.
+_(Both of these documents const in excess of $150AUD each to purchase and I was unable to find free versions of these documents)_
 
 ---
 
@@ -443,25 +442,6 @@ For a marketplace application, quick reactions from the application are paramoun
 
 ## Q7 - Discuss common methods of protecting information and data and how you would apply them to the project
 
-* Restrict physical access to servers - handled entirely by existing ACME Corporation procedures.
-* VPNs should be used for system access for remote developer access.
-* Backup data to external storage to protect against ransomware attacks.
-* User authentication should ideally include two-factor authentication to reduce the risk of data loss in the case of data spill of passwords.
-* Data 'At-rest' - The default state for data being stored should be protected.
-  * Encryption
-  * Tokenisation (The process of substituting sensitive data with data that has no meaning)
-* Data 'In-transit'
-  * Encryption or Tokenisation should be used to protect live data.
-  * The use of third party agents like paypal to handle payment information     means that this system wont have to do it.
-* Good development practices - avoiding vulnerabilities such as SQL injections
-* Only store the minimum amount of data about a user as possible
-
-* Roles and privileges management
-  * Only allow the minimum amount of users to have access to stored data and processes. This should ideally be senior members of the company.
-  * Role segregation - Developers should have little to no access to stored data once it has been deployed.
-
-* Third party audits of all software and cyber security practices
-
 ---
 
 <div style="page-break-after: always;"></div>
@@ -469,63 +449,6 @@ For a marketplace application, quick reactions from the application are paramoun
 ---
 
 ## Q8 - Research what your legal obligations are in relation to handling user data and how they can be met for the project
-
-### Australian Laws
-
-#### The Privacy Act 1998
-
-The Privacy Act 1998 contains legislation for the handling of user data in Australia.
-
-[The Privacy Act 1998, Part II, Div 1, Section 6C](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712337) describes the definition of an 'Organisation' that this act applies to. 
-Subsection (1) excludes small business owners from this definition.
-
-[The Privacy Act 1998, Part II, Div 1, Section 6D](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712338) describes the definition of a small business.
-> What is a small business?
->(1)  A business is a small business at a time (the test time) in a financial year (the current year) if its annual turnover for the previous financial year is $3,000,000 or less.
->
->Test for new business
->
->(2)  However, if there was no time in the previous financial year when the business was carried on, the business is a small business at the test time only if its annual turnover for the current year is $3,000,000 or less.
-
-Subsection (4) lists exclusions from the definitions in Subsections (1), (2)
-Subsections (5),(6),(7),(8),(9) provide exceptions from the exclusions listed in subsection (4)
-
-#### The Australian Privacy Principles
-
-[The Privacy Act 1998, Schedule 1](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712716) sets out the 13 Australian Privacy Principles (APP).
-These principles are separated into 5 sections
-
-* [Part 1 - Consideration of personal information privacy](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712718)
-* [Part 2 - Collection of personal information](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712721)
-* [Part 3 - Dealing with personal information](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712725)
-* [Part 4 - Integrity of Personal Information](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712730)
-* [Part 5 - Access to, and correction of personal information](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712733)
-
-#### The Online Safety Act 2021
-
-If this project affords users the ability to make comments about a person or upload media files then the project may also have to comply with [The Online Safety Act 2021](https://www.legislation.gov.au/Details/C2022C00052)
-
-The Online Safety Act 2021 deals with cyber-bulling, cyber-abuse and the non-consensual sharing of intimate images.
-
-### Standards
-
-#### ISO/IEC 27000 Series
-
-The ISO/IEC 27000 Series of standards describe best practices of the management of Information System Security.
-In particular the ISO 27001, Annex A describes 114 controls grouped into 14 categories:
-
-This document only briefly describes the 114 controls however ISO 270002 goes into further details on these controls.
-_(Both of these documents const in excess of $150AUD each to purchase and I was unable to find free versions of these documents so I'm not currently able to go into more detail)_
-
-### Compliance
-
-Even if this project does not full under The Privacy Act 1998 at its launch, we should plan for it to eventually grow to the size that it will. This means complying with the above Government legislation and recognised international standards as best is as possible from the outset.
-
-There is a considerable amount of information contained in these documents and the development team should either be granted access to a company Privacy Officer from the ACME Corporation if any have been appointed. Otherwise one senior member of the project team should be nominated as the 'Privacy Subject Matter Expert' (SME).
-
-All members of the development team will have an understanding of the Australian Privacy Principles however the Privacy Officer or SME will be expected to have a deeper knowledge and enable to team to comply with all regulations.
-
-[An information pack](https://education.oaic.gov.au/privacy-officer-toolkit/) designed for government agencies' Privacy Officers is available however it contains a lot of useful information if a project Privacy SME is appointed.
 
 ---
 
@@ -535,25 +458,7 @@ All members of the development team will have an understanding of the Australian
 
 # Relational Databases
 
-## Q9 - Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure
-
-### Tables
-
-Groups of related data are grouped together in tables. Tables can have many columns and many rows.
-
-### Columns
-
-Columns are used to define a piece of data stored in a row.
-Columns can have additional properties assigned to them such as data types, whether or not they are mandatory or optional, size constraints and the ability to make them auto-increment.
-
-### Rows
-
-Rows store collections of data relating to a single event or entity.
-Rows can be identified by the use of a Primary Key and and row can be stored across multiple tables with the inclusion of a Foreign Key (Primary Key from another row)
-
-### Relationships
-
-Relationships between objects are represented with the inclusion of a foreign key.
+## Q9 - Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure.
 
 ---
 
@@ -562,31 +467,6 @@ Relationships between objects are represented with the inclusion of a foreign ke
 ---
 
 ## Q10 - Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.
-
-### Constraints
-
-Constraints are used to enforce data integrity by making sure all data fields are the same. Example constraints might be `NOT_NULL` or `UNIQUE`. The use of strict data types also helps with data integrity.
-
-### ACID
-
-To ensure data integrity all transactions in a relational database must be ACID transactions.
-
-#### Atomicity
-
-A transaction may be comprised of multiple statements, Atomicity guarantees that all statements in a transaction must pass for any of them to be applied. One example is the transfer of money from one bank account to another. A bank will not deposit money into account 'B' if it cannot be withdrawn from account 'A' and vice versa. In this case the transaction being the transfer is Atomic. 
-
-
-#### Consistency (Correctness)
-
-Consistency guarantees that a database will not be placed into an invalid state and will avoid corruption by illegal transaction. It involves ensuring all data written to the database is valid by all constraints
-
-#### Isolation
-
-Isolation guarantees that a database will be in the same state after multiple transactions are carried out concurrently as if they were all carried out sequentially.
-
-#### Durability
-
-Durability guarantees that transactions committed to a database will remain committed even in the case of a system failure. This involves storing completed transactions in non-volitional memory (essentially anything other then RAM in a modern system)
 
 ---
 
