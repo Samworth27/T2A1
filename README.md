@@ -1,4 +1,4 @@
-<!-- Styling required for conversion to PDF format when using no margins in print options-->
+<!-- Styling required for conversion to PDF format when using no margins in print options, ensure print background option is enabled -->
 <div style="padding: 2em">
 
 T2A1 - Workbook
@@ -16,60 +16,21 @@ Sam Mitchell
 * [Table of Contents](#table-of-contents)
 * [Ruby on Rails](#ruby-on-rails)
   * [Q1 - Describe the architecture of a typical Rails application](#q1---describe-the-architecture-of-a-typical-rails-application)
-    * [MCV](#mcv)
-    * [Web Server](#web-server)
-    * [Routes](#routes)
-    * [CONTROLLER](#controller)
-    * [MODEL](#model)
-    * [Database](#database)
-    * [VIEW](#view)
   * [Q2 - Identify a database management system (DBMS) commonly used in web applications (including Rails) and discuss the pros and cons of this database](#q2---identify-a-database-management-system-dbms-commonly-used-in-web-applications-including-rails-and-discuss-the-pros-and-cons-of-this-database)
-    * [NEO4J](#neo4j)
 * [Project Management](#project-management)
   * [Q3 - Discuss the implementation of Agile project management methodology](#q3---discuss-the-implementation-of-agile-project-management-methodology)
-    * [The Manifesto for Agile Software Development](#the-manifesto-for-agile-software-development)
-    * [Implementation of Agile Values and Principles](#implementation-of-agile-values-and-principles)
   * [Q4 Provide an overview and description of a standard source control workflow](#q4-provide-an-overview-and-description-of-a-standard-source-control-workflow)
-    * [The Main Branch](#the-main-branch)
-    * [Development Branch](#development-branch)
-    * [Feature Branches](#feature-branches)
-    * [Release Branch](#release-branch)
-    * [Commits & pushes](#commits--pushes)
-    * [Examples](#examples)
   * [Q5 - Provide an overview and description of a standard software testing process (e.g. manual testing)](#q5---provide-an-overview-and-description-of-a-standard-software-testing-process-eg-manual-testing)
-    * [The Software Testing Life Cycle (STLC)](#the-software-testing-life-cycle-stlc)
-    * [STLC and agile](#stlc-and-agile)
 * [Security and Privacy](#security-and-privacy)
   * [Q6 - Discuss and analyse requirements related to information system security and how they relate to the project](#q6---discuss-and-analyse-requirements-related-to-information-system-security-and-how-they-relate-to-the-project)
-    * [People](#people)
-    * [Processes](#processes)
-    * [Technology](#technology)
   * [Q7 - Discuss common methods of protecting information and data and how you would apply them to the project](#q7---discuss-common-methods-of-protecting-information-and-data-and-how-you-would-apply-them-to-the-project)
   * [Q8 - Research what your legal obligations are in relation to handling user data and how they can be met for the project](#q8---research-what-your-legal-obligations-are-in-relation-to-handling-user-data-and-how-they-can-be-met-for-the-project)
-    * [Australian Laws](#australian-laws)
-    * [Standards](#standards)
-    * [Compliance](#compliance)
 * [Relational Databases](#relational-databases)
   * [Q9 - Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure](#q9---describe-the-structural-aspects-of-the-relational-database-model-your-description-should-include-information-about-the-structure-in-which-data-is-stored-and-how-relations-are-represented-in-that-structure)
-    * [Tables](#tables)
-    * [Columns](#columns)
-    * [Rows](#rows)
-    * [Relationships](#relationships)
   * [Q10 - Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.](#q10---describe-the-integrity-aspects-of-the-relational-database-model-your-description-should-include-information-about-the-types-of-data-integrity-and-how-they-can-be-enforced-in-a-relational-database)
-    * [Constraints](#constraints)
-    * [ACID](#acid)
-  * [Q11 - Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database.](#q11---describe-the-manipulative-aspects-of-the-relational-database-model-your-description-should-include-information-about-the-ways-in-which-data-is-manipulated-added-removed-changed-and-retrieved-in-a-relational-database)
+  * [Q11 - Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database](#q11---describe-the-manipulative-aspects-of-the-relational-database-model-your-description-should-include-information-about-the-ways-in-which-data-is-manipulated-added-removed-changed-and-retrieved-in-a-relational-database)
 * [Marketplace Case Study - Ebay](#marketplace-case-study---ebay)
   * [Q12 - Conduct research into a marketplace website (app) and answer the following parts:](#q12---conduct-research-into-a-marketplace-website-app-and-answer-the-following-parts)
-    * [a. List and describe the software used by the app.](#a-list-and-describe-the-software-used-by-the-app)
-    * [b. Describe the hardware used to host the app.](#b-describe-the-hardware-used-to-host-the-app)
-    * [c. Describe the interaction of technologies within the app](#c-describe-the-interaction-of-technologies-within-the-app)
-    * [d. Describe the way data is structured within the app](#d-describe-the-way-data-is-structured-within-the-app)
-    * [e. Identify entities which must be tracked by the app](#e-identify-entities-which-must-be-tracked-by-the-app)
-    * [f. Identify the relationships and associations between the entities you have identified in part (e)](#f-identify-the-relationships-and-associations-between-the-entities-you-have-identified-in-part-e)
-    * [g. Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)](#g-design-a-schema-using-an-entity-relationship-diagram-erd-appropriate-for-the-database-of-this-website-assuming-a-relational-database-model)
-
-
 
 ---
 
@@ -78,6 +39,12 @@ Sam Mitchell
 ---
 
 # Ruby on Rails
+
+---
+
+<div style="page-break-after: always;"></div>
+
+---
 
 ## Q1 - Describe the architecture of a typical Rails application
 
@@ -98,6 +65,8 @@ The typical rails applications follows the 'Model-View-Controller' pattern which
 
 In practice a Ruby Rails application has more components then just this.
 The following is a breakdown of the major components in a Rails Application
+
+<div style="page-break-after: always;"></div>
 
 ### Web Server
 
@@ -126,6 +95,8 @@ In a rails environment, the default Database Management System is SQLITE3, which
 ### VIEW
 
 In rails the 'View' component of the MVC pattern is managed by a combination of 'layouts', 'templates' and 'partials'.
+
+<div style="page-break-after: always;"></div>
 
 #### Partials
 
@@ -195,8 +166,13 @@ A Neo4J database can be hosted locally or on the cloud using the AuraDB service 
 * Not automatically supported by Ruby on Rails (however there are gems available to extend Neo4j to Rails)
 * The benefits gained in interpreting data are lost if a Graph Network Database is used to simply store data.
 
-> #### Graph Databases
->
+
+
+<div style="page-break-after: always;"></div>
+
+
+#### Graph Databases
+
 > <img align="right" src="./img/graph.svg">
 >
 > ##### Nodes
@@ -219,6 +195,12 @@ A Neo4J database can be hosted locally or on the cloud using the AuraDB service 
 ---
 
 # Project Management
+
+---
+
+<div style="page-break-after: always;"></div>
+
+---
 
 ## Q3 - Discuss the implementation of Agile project management methodology
 
@@ -258,6 +240,8 @@ The Manifesto for Agile Software Development is based on twelve principles
 > 11. Best architectures, requirements, and designs emerge from self-organizing teams
 > 12. Regularly, the team reflects on how to become more effective, and adjusts accordingly
 
+<div style="page-break-after: always;"></div>
+
 ### Implementation of Agile Values and Principles
 
 #### People over processes
@@ -271,8 +255,6 @@ By engaging the team members in the planing process a manager can draw on techni
 A 1000 page manual on how to service a car is useless without the car. Just as complete documentation on a incomplete program is useless. This does not mean that a development team should forgo documenting their software but instead it should be "just barely good enough". Just good enough to describe use cases, model and methods. Just good enough to allow a new member to the team to understand the software.
 
 #### Being adaptable
-
-<!-- ![agile](./img/agile.png) ![ooda loop](./img/ooda-loop.webp) -->
 
 There's a saying in the Army that no plan survives contact with the enemy, but this doesn't mean you don't plan at all, it means you need to be prepared to make changes to your plan on the fly based of intelligence gathered.
 
@@ -309,6 +291,8 @@ Most model recommend the use of a feature branch. This is a branch from the main
 ### Release Branch
 
 Some workflows use a release branch to separate a version of software for production. In some cases however the main branch is used for deployment and tagged with a version.
+
+<div style="page-break-after: always;"></div>
 
 ### Commits & pushes
 
@@ -355,6 +339,8 @@ Groups of working components should be combined into progressively larger groups
 
 System Testing is hte final stage in the verification stage of testing. The aim of this stage is to verify the system meets all requirements and specifications.
 
+<div style="page-break-after: always;"></div>
+
 #### Acceptance Testing
 
 Acceptance Testing is carried out in the final stages before the release of a system. It may include:
@@ -392,6 +378,10 @@ Verify that all tests are completed, document the testing results and prepare th
 
 ![CIA Triad](./img/cia-triad.svg)
 
+---
+<div style="page-break-after: always;"></div>
+---
+
 ## Q6 - Discuss and analyse requirements related to information system security and how they relate to the project
 
 ### People
@@ -407,6 +397,8 @@ How do you manage a remote worker connecting from an external network?
 Do you allow workers to connect their own USB devices to the network?
 What individuals and what roles can access specific data?
 What are the procedures in the instance of a data breach?
+
+<div style="page-break-after: always;"></div>
 
 ### Technology
 
@@ -501,6 +493,8 @@ These principles are separated into 5 sections
 * [Part 4 - Integrity of Personal Information](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712730)
 * [Part 5 - Access to, and correction of personal information](https://www.legislation.gov.au/Details/C2022C00135/Html/Text#_Toc85712733)
 
+<div style="page-break-after: always;"></div>
+
 #### The Online Safety Act 2021
 
 If this project affords users the ability to make comments about a person or upload media files then the project may also have to comply with [The Online Safety Act 2021](https://www.legislation.gov.au/Details/C2022C00052)
@@ -575,7 +569,6 @@ To ensure data integrity all transactions in a relational database must be ACID 
 
 A transaction may be comprised of multiple statements, Atomicity guarantees that all statements in a transaction must pass for any of them to be applied. One example is the transfer of money from one bank account to another. A bank will not deposit money into account 'B' if it cannot be withdrawn from account 'A' and vice versa. In this case the transaction being the transfer is Atomic. 
 
-
 #### Consistency (Correctness)
 
 Consistency guarantees that a database will not be placed into an invalid state and will avoid corruption by illegal transaction. It involves ensuring all data written to the database is valid by all constraints
@@ -594,7 +587,24 @@ Durability guarantees that transactions committed to a database will remain comm
 
 ---
 
-## Q11 - Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database.
+## Q11 - Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database
+
+### CRUD
+
+The 4 basic operations that can be carried out in a relational database follow the CRUD pattern.
+
+* Create
+* Read
+* Update
+* Delete
+
+The most important part of implementing all of these operations (except Create) is the selection of the data upon which the operation is performed on.
+
+### Relational Algebra
+
+Most relational DBMS rely on relational algebra as the foundation (query language like SQL especially).
+Relational algebra takes multiple inputs in the form of data relations and output a singular data relation.
+Relational algebra draws some of its operators from set theory (union, intersection, difference and cartesian product) but with extra constraints. In addition to these operations, relational algebra also includes the Projection (select only certain attributes), Selection (SQL SELECT Query), Rename and Join operations.
 
 ---
 
@@ -625,6 +635,8 @@ This is just the storage server, in addition Ebay would require web servers and 
 
 Ebay uses a fairly standard front end stack of HTML, CSS and JavaScript in the form of MarkoJS, behind the scenes ebay utilises a a number of different technologies for their operations. They use a combination of traditional Relational Databases, Graph Network Databases and image databases. These are combined with powerful Machine Learning algorithms to provide users recommendations, enable fraud control and the ability to search for listings based on an image from their device.
 
+<div style="page-break-after: always;"></div>
+
 ### d. Describe the way data is structured within the app
 
 Ebay uses multiple data structures depending on what the data is used for.
@@ -650,6 +662,8 @@ Ebay uses dedicated databases to store images
 | Account  | Item        | Images | Category |
 | Address  | Price       | Bids   | Review   |
 | Listings | Transaction |        |          |
+
+<div style="page-break-after: always;"></div>
 
 ### f. Identify the relationships and associations between the entities you have identified in part (e)
 
@@ -696,9 +710,13 @@ Must have a price
 Can be about a buyer, seller, or listing
 Can be from a buyer or seller
 
+<div style="page-break-after: always;"></div>
+
 ### g. Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)
 
 ![erd](img/erd.svg)
 
+<!-- Last page break to ensure background colour goes to the end of the printed page. In print settings do not print last page. -->
+<div style="page-break-after: always;"></div>
 
 </div>
