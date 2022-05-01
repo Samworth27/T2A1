@@ -173,7 +173,7 @@ A Neo4J database can be hosted locally or on the cloud using the AuraDB service 
 
 #### Graph Databases
 
-> <img align="right" src="./img/graph.svg">
+> <img align = "right" src="./img/graph.svg">
 >
 > ##### Nodes
 >
@@ -181,7 +181,7 @@ A Neo4J database can be hosted locally or on the cloud using the AuraDB service 
 >
 > ##### Edges
 >
-> Edges represent the relationships between nodes. Edges are labeled with types, in the example the right these types are [DIRECTED, ACTED_IN, REVIEWED, FOLLOWS].
+> Edges represent the relationships between nodes. Edges are labelled with types, in the example the right these types are [DIRECTED, ACTED_IN, REVIEWED, FOLLOWS].
 >
 > ##### Properties
 >
@@ -221,7 +221,7 @@ Through this work we have come to value:
 > * **Customer collaboration** _over_ contract negotiation
 > * **Responding to change** _over_ following a plan
 
-"That is to say, while both sides have value and the items on the right should be considered, the authors of the manifesto chose to tip the balance in favor of the items on the left."
+"That is to say, while both sides have value and the items on the right should be considered, the authors of the manifesto chose to tip the balance in favour of the items on the left."
 
 #### Agile Software Development Principles
 
